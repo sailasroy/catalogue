@@ -13,6 +13,13 @@ pipeline {
                 sh 'unit test is sucessfull'
             }
         }
+        // sonar-scanner expets sonar-project.properties avilable or not
+      stage('Sonar Scan') {
+            steps {
+                sh 'ls -ltr'
+                sh 'sonar-scanner'
+            }
+        }
 }
 
 
