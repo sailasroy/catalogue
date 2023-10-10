@@ -7,5 +7,13 @@ pipeline {
                 sh 'npm install'
             }
         }
+
+    stage('Unit test') {
+            steps {
+                sh 'unit test is sucessfull'
+            }
+        }
 }
+
+
 }
