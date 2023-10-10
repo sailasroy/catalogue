@@ -7,16 +7,25 @@ pipeline {
                 sh 'npm install'
             }
         }
-
-   
-        // sonar-scanner expets sonar-project.properties avilable or not
-      stage('Sonar Scan') {
+    stage('Build') {
             steps {
                 sh 'ls -ltr'
-                sh 'sonar-scanner'
             }
         }
+   
+    //     // sonar-scanner expets sonar-project.properties avilable or not
+    //   stage('Sonar Scan') {
+    //         steps {
+    //             sh 'ls -ltr'
+    //             sh 'sonar-scanner'
+    //         }
+    //     }
 }
-
+    post{
+        always{
+            echo 'cleaning up workspace'
+            deleteDir()
+        }
+    }
 
 }
