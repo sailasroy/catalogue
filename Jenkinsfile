@@ -10,6 +10,7 @@ pipeline {
     stage('Build') {
             steps {
                 sh 'ls -ltr'
+                sh 'zip -r ./* --exclude=.git --exclude=.zip'
             }
         }
    
