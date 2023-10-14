@@ -2,13 +2,16 @@ pipeline {
     agent { node { label 'AGENT-1' } }
 
     stages {
-        // stage('Version')
-        //     steps {
-        //         script{
+        stage('Version')
+            steps {
+                script{
+                    def packageJson = readJSON(file: 'package.json')
+                    def packageVersion = packageJson.version
+                    echo "version: $(packageVersion)"
 
-        //         }
+                }
 
-        //     }
+            }
 
         stage('Install dependencies') {
             steps {
