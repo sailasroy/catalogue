@@ -43,6 +43,7 @@ pipeline {
             steps {
                 sh 'ls -ltr'
                 sh 'zip -r catalogue.zip ./* --exclude=.git --exclude=.zip'
+                echo "package version : $packageVersion"
             }
         }
 
