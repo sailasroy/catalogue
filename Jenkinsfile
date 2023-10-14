@@ -2,6 +2,14 @@ pipeline {
     agent { node { label 'AGENT-1' } }
 
     stages {
+        // stage('Version')
+        //     steps {
+        //         script{
+
+        //         }
+
+        //     }
+
         stage('Install dependencies') {
             steps {
                 sh 'ls -ltr'
