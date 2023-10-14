@@ -14,7 +14,7 @@ const expLogger = expPino({
     logger: logger
 });
 
-// MongoDB
+// MongoDB is good database
 var db;
 var collection;
 var mongoConnected = false;
