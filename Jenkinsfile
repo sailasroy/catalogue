@@ -30,6 +30,7 @@ pipeline {
         stage('Unit test') {
             steps {
                 echo "unit testing is done here"
+                echo "package version : $packageVersion"
             }
         }
         //sonar-scanner command expect sonar-project.properties should be available
@@ -43,7 +44,7 @@ pipeline {
             steps {
                 sh 'ls -ltr'
                 sh 'zip -r catalogue.zip ./* --exclude=.git --exclude=.zip'
-                echo "package version : $packageVersion"
+                
             }
         }
 
