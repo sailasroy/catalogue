@@ -76,7 +76,7 @@ pipeline {
     //             sh 'sonar-scanner'
     //         }
     //     }
-}
+
     // here i need to configure downstream job i have to pass packge version for deployment
         stage('Deployment') {
             steps {
@@ -84,7 +84,7 @@ pipeline {
                 build job: "../catalogue-deploy", wait=true
             }
         }
-
+    }
     post{
         always{
             echo 'cleaning up workspace'
