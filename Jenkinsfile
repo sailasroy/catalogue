@@ -79,11 +79,11 @@ pipeline {
 }
     // here i need to configure downstream job i have to pass packge version for deployment
         stage('Deployment') {
-                steps {
-                    echo "Deployment"
-                    build job: "../catalogue-deply", wait=true
-                }
+            steps {
+                echo "Deployment"
+                build job: "../catalogue-deply", wait=true
             }
+        }
 
     post{
         always{
