@@ -1,5 +1,8 @@
 pipeline {
     agent { node { label 'AGENT-1' } }
+    options {
+        ansiColor('xterm')
+    }
 
     //here you create any variable you will have global access
 
