@@ -80,15 +80,18 @@ pipeline {
     // here i need to configure downstream job i have to pass packge version for deployment
         stage('Deployment') {
             steps {
-                echo "Deployment"
-                    def params = [
-                        string(name: 'version', value: "$packageVersion")
-                    ]
-                    
-                    build job: "../catalogue-deploy", wait: true
+                script{
+                    echo "Deployment"
+                        def params = [
+                            string(name: 'version', value: "$packageVersion")
+                        ]
+                        
+                        build job: "../catalogue-deploy", wait: true, parameters: params
             }
         }
+        }
     }
+
     post{
         always{
             echo 'cleaning up workspace'
